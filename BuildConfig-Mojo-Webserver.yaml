@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: mojo-webserver
+  name: mojo-webserver
+  namespace: weepee-registry
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: mojo-webserver:latest
+  resources: {}
+  source:
+    git:
+      uri: https://github.com/weepee-org/openshift-mojolicious.git
+      ref: release
+    type: Git
+  strategy:
+    dockerStrategy: {}
+    type: Docker
+  triggers:
+    - github:
+        secret: vXZh8F+7taPEgX3l
+      type: GitHub
+    - generic:
+        secret: uDWQGHVrl3kpmapC
+      type: Generic
+    - type: ConfigChange
