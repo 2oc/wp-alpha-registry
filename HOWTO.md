@@ -3,6 +3,7 @@
 Weepee pre-build images to use in your projects
 
 ### Static Web Server (Alpine linux based with Apache)
+source [https://github.com/weepee-org/openshift-static-web]
 add to your BuildConfig:
 ```yaml
 spec:
