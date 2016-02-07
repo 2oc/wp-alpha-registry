@@ -13,7 +13,7 @@ spec:
   resources: {}
   source:
     git:
-      uri: https://github.com/weepee-org/openshift-php-webserver.git
+      uri: https://github.com/weepee-org/openshift-apache-php.git
       ref: release
     type: Git
   strategy:
