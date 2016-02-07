@@ -21,3 +21,11 @@ oc create -f ImageStream-Static-Webserver.yaml
 oc create -f BuildConfig-Static-Weberver.yaml
 oc start-build static-webserver
 ```
+
+### add PHP Web Server to the Weepee Registry
+
+```
+oc create -f ImageStream-PHP-Webserver.yaml
+oc create -f BuildConfig-PHP-Weberver.yaml
+oc start-build apache-php
+```
