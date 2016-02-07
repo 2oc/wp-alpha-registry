@@ -18,7 +18,7 @@ create a new project
 
 ```
 oc create -f ImageStream-Static-Webserver.yaml
-oc create -f BuildConfig-Static-Weberver.yaml
+oc create -f BuildConfig-Static-Webserver.yaml
 oc start-build static-webserver
 ```
 
@@ -26,6 +26,6 @@ oc start-build static-webserver
 
 ```
 oc create -f ImageStream-PHP-Webserver.yaml
-oc create -f BuildConfig-PHP-Weberver.yaml
+oc create -f BuildConfig-PHP-Webserver.yaml
 oc start-build apache-php
 ```
