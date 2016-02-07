@@ -24,7 +24,7 @@ FROM weepee-registry/static-webserver
 ADD app /app
 ```
 example
-[https://github.com/weepee-org/openshift-my-static-site]
+[https://github.com/weepee-org/openshift-example-project]
 
 ### PHP Web Server (Alpine linux based with Apache & PHP)
 source [https://github.com/weepee-org/openshift-apache-php]
@@ -48,4 +48,4 @@ FROM weepee-registry/apache-php
 ADD app /app
 ```
 example
-[https://github.com/weepee-org/openshift-my-php-site]
+[https://github.com/weepee-org/openshift-example-project]
