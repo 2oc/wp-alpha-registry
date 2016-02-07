@@ -20,10 +20,10 @@ spec:
     dockerStrategy: {}
     type: Docker
   triggers:
-  - github:
-      secret: PO5y0SQhud939JBml30p
-    type: GitHub
-  - generic:
-      secret: YbpZGRwLNPjVmWUEKRNZ
-    type: Generic
-  - type: ConfigChange
+    - github:
+        secret: 9TF77nhBbeFpSW+I
+      type: GitHub
+    - generic:
+        secret: +xK87ja+kKwTDnI2
+      type: Generic
+    - type: ConfigChange

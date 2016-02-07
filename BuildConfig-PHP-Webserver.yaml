@@ -2,28 +2,28 @@ apiVersion: v1
 kind: BuildConfig
 metadata:
   labels:
-    app: apache-php
-  name: apache-php
+    app: php-webserver
+  name: php-webserver
   namespace: weepee-registry
 spec:
   output:
     to:
       kind: ImageStreamTag
-      name: apache-php:latest
+      name: php-webserver:latest
   resources: {}
   source:
     git:
-      uri: https://github.com/weepee-org/openshift-apache-php.git
+      uri: https://github.com/weepee-org/openshift-php-webserver.git
       ref: release
     type: Git
   strategy:
     dockerStrategy: {}
     type: Docker
   triggers:
-  - github:
-      secret: PO5y0SQhud939JBml30p
-    type: GitHub
-  - generic:
-      secret: YbpZGRwLNPjVmWUEKRNZ
-    type: Generic
-  - type: ConfigChange
+    - github:
+        secret: +MWPnjcqBKQ71hLY
+      type: GitHub
+    - generic:
+        secret: T8LYyu5Jq6uYUA4Q
+      type: Generic
+    - type: ConfigChange
