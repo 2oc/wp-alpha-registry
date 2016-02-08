@@ -4,4 +4,5 @@ metadata:
   labels:
     app: php-webserver
   name: php-webserver
+  namespace: weepee-registry
 spec: {}

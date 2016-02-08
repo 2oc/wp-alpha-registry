@@ -4,4 +4,5 @@ metadata:
   labels:
     app: static-webserver
   name: static-webserver
+  namespace: weepee-registry
 spec: {}

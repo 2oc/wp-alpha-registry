@@ -4,4 +4,5 @@ metadata:
   labels:
     app: hhvm-webserver
   name: hhvm-webserver
+  namespace: weepee-registry
 spec: {}

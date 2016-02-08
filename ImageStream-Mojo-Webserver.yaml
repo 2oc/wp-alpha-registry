@@ -4,4 +4,5 @@ metadata:
   labels:
     app: mojo-webserver
   name: mojo-webserver
+  namespace: weepee-registry
 spec: {}
