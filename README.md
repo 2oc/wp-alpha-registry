@@ -44,3 +44,11 @@ oc create -f ImageStream-HHVM-Webserver.yaml
 oc create -f BuildConfig-HHVM-Webserver.yaml
 oc start-build hhvm-webserver
 ```
+
+### add Proxy Server to the Weepee Registry
+
+```
+oc create -f ImageStream-Proxy-Server.yaml
+oc create -f BuildConfig-Proxy-Server.yaml
+oc start-build proxy-server
+```

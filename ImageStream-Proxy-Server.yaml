@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  labels:
+    app: proxy-server
+  name: proxy-server
+  namespace: weepee-registry
+spec: {}

@@ -97,3 +97,27 @@ ADD app /app
 ```
 example
 [https://github.com/weepee-org/openshift-example-project]
+
+### Proxy Server (Alpine linux based apache proxy)
+source [https://github.com/weepee-org/openshift-webproxy]
+
+add to your BuildConfig:
+```yaml
+spec:
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: proxy-server:latest
+        namespace: weepee-registry
+    type: Docker
+```
+add a small Dockerfile
+```dockerfile
+FROM weepee-registry/proxy-server
+
+# Your conf here (where proxy.conf resides)
+ADD conf /conf
+```
+example
+[https://github.com/weepee-org/openshift-example-project]
