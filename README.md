@@ -27,5 +27,20 @@ oc start-build static-webserver
 ```
 oc create -f ImageStream-PHP-Webserver.yaml
 oc create -f BuildConfig-PHP-Webserver.yaml
-oc start-build apache-php
+oc start-build php-webserver
+```
+### add Mojolicious Web Server to the Weepee Registry
+
+```
+oc create -f ImageStream-Mojo-Webserver.yaml
+oc create -f BuildConfig-Mojo-Webserver.yaml
+oc start-build mojo-webserver
+```
+
+### add HHVM Web Server to the Weepee Registry
+
+```
+oc create -f ImageStream-HHVM-Webserver.yaml
+oc create -f BuildConfig-HHVM-Webserver.yaml
+oc start-build hhvm-webserver
 ```

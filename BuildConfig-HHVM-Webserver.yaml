@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: hhvm-webserver
+  name: hhvm-webserver
+  namespace: weepee-registry
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: hhvm-webserver:latest
+  resources: {}
+  source:
+    git:
+      uri: https://github.com/weepee-org/openshift-hhvm.git
+      ref: release
+    type: Git
+  strategy:
+    dockerStrategy: {}
+    type: Docker
+  triggers:
+    - github:
+        secret: WHvZnp/p/o8vL/+v
+      type: GitHub
+    - generic:
+        secret: p3DxPmm8NnyoYAEc
+      type: Generic
+    - type: ConfigChange

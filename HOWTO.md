@@ -73,3 +73,27 @@ ADD app /app
 ```
 example
 [https://github.com/weepee-org/openshift-example-project]
+
+### HHVM Web Server (debian linux based hhvm)
+source [https://github.com/weepee-org/openshift-hhvm]
+
+add to your BuildConfig:
+```yaml
+spec:
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: hhvm-webserver:latest
+        namespace: weepee-registry
+    type: Docker
+```
+add a small Dockerfile
+```dockerfile
+FROM weepee-registry/hhvm-webserver
+
+# Your app here (where index.php resides)
+ADD app /app
+```
+example
+[https://github.com/weepee-org/openshift-example-project]
