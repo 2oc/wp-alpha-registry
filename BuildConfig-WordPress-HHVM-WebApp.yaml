@@ -2,33 +2,33 @@ apiVersion: v1
 kind: BuildConfig
 metadata:
   labels:
-    app: wordpress-php-app
-  name: wordpress-php-app
+    app: wordpress-hhvm-app
+  name: wordpress-hhvm-app
   namespace: weepee-registry
 spec:
   output:
     to:
       kind: ImageStreamTag
-      name: wordpress-php-app:latest
+      name: wordpress-hhvm-app:latest
   resources: {}
   source:
     git:
-      uri: https://github.com/weepee-org/openshift-wordpress-php.git
+      uri: https://github.com/weepee-org/openshift-wordpress-hhvm.git
       ref: release
     type: Git
-    contextDir: php/
+    contextDir: hhvm/
   strategy:
     dockerStrategy:
       from:
         kind: ImageStreamTag
-        name: php-webserver:latest
+        name: hhvm-webserver:latest
         namespace: weepee-registry
     type: Docker
   triggers:
     - github:
-        secret: G3dnC3WBxQ3oQ1QKKA1r1wMNjsFr8z3QX
+        secret: BVi2dtDOAXmZXbNNYYfeZY2jGqTiao6Qp
       type: GitHub
     - generic:
-        secret: G3dnC3WBxQ3oQ1QKKA1r1wMNjsFr8z3QX
+        secret: BVi2dtDOAXmZXbNNYYfeZY2jGqTiao6Qp
       type: Generic
     - type: ConfigChange

@@ -2,18 +2,18 @@ apiVersion: v1
 kind: BuildConfig
 metadata:
   labels:
-    app: mojo-webserver
-  name: mojo-webserver
+    app: php-phalcon-webserver
+  name: php-phalcon-webserver
   namespace: weepee-registry
 spec:
   output:
     to:
       kind: ImageStreamTag
-      name: mojo-webserver:latest
+      name: php-phalcon-webserver:latest
   resources: {}
   source:
     git:
-      uri: https://github.com/weepee-org/openshift-mojolicious.git
+      uri: https://github.com/weepee-org/openshift-apache-php-phalcon.git
       ref: release
     type: Git
   strategy:
@@ -21,9 +21,9 @@ spec:
     type: Docker
   triggers:
     - github:
-        secret: Vzp4vQFObvSVqKgklJrjyF3I0AypREexl
+        secret: o74l3qx2GViYtbtPomBG9Ya8qrjlXPeE3
       type: GitHub
     - generic:
-        secret: Vzp4vQFObvSVqKgklJrjyF3I0AypREexl
+        secret: o74l3qx2GViYtbtPomBG9Ya8qrjlXPeE3
       type: Generic
     - type: ConfigChange

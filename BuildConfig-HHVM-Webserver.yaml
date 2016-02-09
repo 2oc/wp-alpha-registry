@@ -21,9 +21,9 @@ spec:
     type: Docker
   triggers:
     - github:
-        secret: WHvZnp/p/o8vL/+v
+        secret: X9Lb84hZqX6I77ZW2iWFHBhwvMstjNWJL
       type: GitHub
     - generic:
-        secret: p3DxPmm8NnyoYAEc
+        secret: X9Lb84hZqX6I77ZW2iWFHBhwvMstjNWJL
       type: Generic
     - type: ConfigChange

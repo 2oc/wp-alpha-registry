@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  labels:
+    app: wordpress-hhvm-app
+  name: wordpress-hhvm-app
+  namespace: weepee-registry
+spec: {}
