@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#openssl rand 60 -base64 | tr -cd '[[:alnum:]]' | head -c 33 |cb 
+#openssl rand 60 -base64 | tr -cd '[[:alnum:]]' | head -c 33 |cb
 
 # Cleanup
 oc delete -f ImageStream-Static-Webserver.yaml
@@ -17,6 +17,8 @@ oc delete -f ImageStream-WordPress-PHP-WebApp.yaml
 oc delete -f BuildConfig-WordPress-PHP-WebApp.yaml
 oc delete -f ImageStream-WordPress-HHVM-WebApp.yaml
 oc delete -f BuildConfig-WordPress-HHVM-WebApp.yaml
+oc delete -f ImageStream-PHP-Phalcon-Webserver.yaml
+oc delete -f BuildConfig-PHP-Phalcon-Webserver.yaml
 
 # Install
 oc create -f ImageStream-Static-Webserver.yaml
@@ -33,3 +35,5 @@ oc create -f ImageStream-WordPress-PHP-WebApp.yaml
 oc create -f BuildConfig-WordPress-PHP-WebApp.yaml
 oc create -f ImageStream-WordPress-HHVM-WebApp.yaml
 oc create -f BuildConfig-WordPress-HHVM-WebApp.yaml
+oc create -f ImageStream-PHP-Phalcon-Webserver.yaml
+oc create -f BuildConfig-PHP-Phalcon-Webserver.yaml
