@@ -122,7 +122,7 @@ ADD conf /conf
 example
 [https://github.com/weepee-org/openshift-example-project]
 
-### WordPress PHP App (Alpine linux based apache proxy + wordpress + mysql database)
+### WordPress PHP App (Alpine linux based apache php + wordpress + mysql database)
 source [https://github.com/weepee-org/openshift-wordpress-php]
 
 add to your BuildConfig:
@@ -141,6 +141,30 @@ add a small Dockerfile
 FROM weepee-registry/wordpress-php-app
 
 # Your wordpress php tree
+ADD wordpress /wordpress
+```
+example
+[https://github.com/weepee-org/openshift-example-project]
+
+### WordPress HHVM App (Debian linux based hhvm + wordpress + mysql database)
+source [https://github.com/weepee-org/openshift-wordpress-hhvm]
+
+add to your BuildConfig:
+```yaml
+spec:
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: wordpress-hhvm-app:latest
+        namespace: weepee-registry
+    type: Docker
+```
+add a small Dockerfile
+```dockerfile
+FROM weepee-registry/wordpress-hhvm-app
+
+# Your wordpress hhvm tree
 ADD wordpress /wordpress
 ```
 example

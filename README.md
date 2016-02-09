@@ -58,5 +58,13 @@ oc start-build proxy-server
 ```
 oc create -f ImageStream-WordPress-PHP-WebApp.yaml
 oc create -f BuildConfig-WordPress-PHP-WebApp.yaml
-oc start-build proxy-server
+oc start-build wordpress-php-app
+```
+
+### add WordPress HHVM APP to the Weepee Registry
+
+```
+oc create -f ImageStream-WordPress-HHVM-WebApp.yaml
+oc create -f BuildConfig-WordPress-HHVM-WebApp.yaml
+oc start-build wordpress-hhvm-app
 ```
