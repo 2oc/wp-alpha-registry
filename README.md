@@ -52,3 +52,11 @@ oc create -f ImageStream-Proxy-Server.yaml
 oc create -f BuildConfig-Proxy-Server.yaml
 oc start-build proxy-server
 ```
+
+### add WordPress PHP APP to the Weepee Registry
+
+```
+oc create -f ImageStream-WordPress-PHP-WebApp.yaml
+oc create -f BuildConfig-WordPress-PHP-WebApp.yaml
+oc start-build proxy-server
+```
