@@ -68,3 +68,11 @@ oc create -f ImageStream-WordPress-HHVM-WebApp.yaml
 oc create -f BuildConfig-WordPress-HHVM-WebApp.yaml
 oc start-build wordpress-hhvm-app
 ```
+
+### add memSQL to the Weepee Registry
+
+```
+oc create -f ImageStream-memSQL-server.yaml
+oc create -f BuildConfig-memSQL-server.yaml
+oc start-build memsql-server
+```

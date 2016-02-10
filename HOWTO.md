@@ -162,3 +162,25 @@ FROM weepee-registry/wordpress-hhvm-app
 ADD wordpress /wordpress
 ```
 [example](https://github.com/weepee-org/openshift-example-project)
+
+### memSQL Server (Ubuntu linux mysql compatible master-master database)
+[source](https://github.com/weepee-org/openshift-memsql)
+
+add to your BuildConfig:
+```yaml
+spec:
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: memsql-server:latest
+        namespace: weepee-registry
+    type: Docker
+```
+add a small Dockerfile
+```dockerfile
+FROM weepee-registry/memsql-server
+```
+map storage to /memsql for a persistant database
+
+[example](https://github.com/weepee-org/openshift-example-project)
