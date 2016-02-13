@@ -163,8 +163,8 @@ ADD wordpress /wordpress
 ```
 [example](https://github.com/weepee-org/openshift-example-project)
 
-### memSQL Master Server (Ubuntu linux mysql compatible master-master database)
-[source](https://github.com/weepee-org/openshift-memsql-master)
+### memSQL Server (Ubuntu linux mysql compatible master-master database)
+[source](https://github.com/weepee-org/openshift-memsqlr)
 
 add to your BuildConfig:
 ```yaml
@@ -173,36 +173,14 @@ spec:
     dockerStrategy:
       from:
         kind: ImageStreamTag
-        name: memsql-master-server:latest
+        name: memsql-server:latest
         namespace: weepee-registry
     type: Docker
 ```
 add a small Dockerfile
 ```dockerfile
-FROM weepee-registry/memsql-master-server
+FROM weepee-registry/memsql-server
 ```
-map storage to /memsql for a persistant database
-
-[example](https://github.com/weepee-org/openshift-example-project)
-
-### memSQL Node Server (Ubuntu linux mysql compatible master-master database)
-[source](https://github.com/weepee-org/openshift-memsql-node)
-
-add to your BuildConfig:
-```yaml
-spec:
-  strategy:
-    dockerStrategy:
-      from:
-        kind: ImageStreamTag
-        name: memsql-node-server:latest
-        namespace: weepee-registry
-    type: Docker
-```
-add a small Dockerfile
-```dockerfile
-FROM weepee-registry/memsql-node-server
-```
-map storage to /memsql for a persistant database
+map storage to /data for a persistant database
 
 [example](https://github.com/weepee-org/openshift-example-project)
