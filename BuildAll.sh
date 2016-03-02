@@ -28,6 +28,8 @@ oc create -f ImageStream-Static-Webserver.yaml
 oc create -f BuildConfig-Static-Webserver.yaml
 oc create -f ImageStream-PHP-Webserver.yaml
 oc create -f BuildConfig-PHP-Webserver.yaml
+oc create -f ImageStream-PHP7-Webserver.yaml
+oc create -f BuildConfig-PHP7-Webserver.yaml
 oc create -f ImageStream-Mojo-Webserver.yaml
 oc create -f BuildConfig-Mojo-Webserver.yaml
 oc create -f ImageStream-HHVM-Webserver.yaml

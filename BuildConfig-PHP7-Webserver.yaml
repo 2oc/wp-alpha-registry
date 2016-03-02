@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: php7-webserver
+  name: php7-webserver
+  namespace: weepee-registry
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: php7-webserver:latest
+  resources: {}
+  source:
+    git:
+      uri: https://github.com/weepee-org/openshift-apache-php7.git
+      ref: release
+    type: Git
+  strategy:
+    dockerStrategy: {}
+    type: Docker
+  triggers:
+    - github:
+        secret: Nu77brfEbipUmbadQlah43Fiq7iRglD1r
+      type: GitHub
+    - generic:
+        secret: Nu77brfEbipUmbadQlah43Fiq7iRglD1r
+      type: Generic
+    - type: ConfigChange

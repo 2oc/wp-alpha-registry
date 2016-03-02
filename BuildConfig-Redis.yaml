@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: redis
+  name: redis
+  namespace: weepee-registry
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: redis:latest
+  resources: {}
+  source:
+    git:
+      uri: https://github.com/weepee-org/openshift-redis.git
+      ref: release
+    type: Git
+  strategy:
+    dockerStrategy: {}
+    type: Docker
+  triggers:
+    - github:
+        secret: 8tSI1ATiAFQvmtWw3M3h2aoLw5xArO4aL
+      type: GitHub
+    - generic:
+        secret: 8tSI1ATiAFQvmtWw3M3h2aoLw5xArO4aL
+      type: Generic
+    - type: ConfigChange
