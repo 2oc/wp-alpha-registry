@@ -2,6 +2,11 @@
 
 #openssl rand 60 -base64 | tr -cd '[[:alnum:]]' | head -c 33 |cb
 
+oc new-project weepee-registry \
+    --description="Weepee docker registry" \
+    --display-name="Weepee Registry"
+
+
 # Cleanup
 oc delete -f ImageStream-Static-Webserver.yaml
 oc delete -f BuildConfig-Static-Webserver.yaml
@@ -46,3 +51,5 @@ oc create -f ImageStream-memSQL-server.yaml
 oc create -f BuildConfig-memSQL-server.yaml
 oc create -f ImageStream-phpPgAdmin-WebApp.yaml
 oc create -f BuildConfig-phpPgAdmin-WebApp.yaml
+oc create -f ImageStream-Asterisk.yaml
+oc create -f BuildConfig-Asterisk.yaml
