@@ -21,7 +21,7 @@ spec:
     dockerStrategy:
       from:
         kind: ImageStreamTag
-        name: php-webserver:latest
+        name: php7-webserver:latest
         namespace: weepee-registry
     type: Docker
   triggers:
