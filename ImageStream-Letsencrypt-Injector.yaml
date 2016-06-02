@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  labels:
+    app: letsencrypt-injector
+  name: letsencrypt-injector
+  namespace: weepee-registry
+spec: {}
