@@ -38,3 +38,5 @@ oc create -f ImageStream-Asterisk.yaml
 oc create -f BuildConfig-Asterisk.yaml
 oc create -f ImageStream-Redis.yaml
 oc create -f BuildConfig-Redis.yaml
+oc create -f ImageStream-Elasticsearch.yaml
+oc create -f BuildConfig-Elasticsearch.yaml
