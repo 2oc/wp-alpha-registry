@@ -4,7 +4,7 @@
 
 oc new-project weepee-registry \
     --description="Weepee docker registry" \
-    --display-name="Weepee Registry"
+    --display-name="[weepee] Registry"
 
 # run on master
 oc policy add-role-to-group \
@@ -40,3 +40,5 @@ oc create -f ImageStream-Redis.yaml
 oc create -f BuildConfig-Redis.yaml
 oc create -f ImageStream-Elasticsearch.yaml
 oc create -f BuildConfig-Elasticsearch.yaml
+oc create -f ImageStream-Letsencrypt-Injector.yaml
+oc create -f BuildConfig-Letsencrypt-Injector.yaml
