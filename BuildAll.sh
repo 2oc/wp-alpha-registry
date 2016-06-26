@@ -42,3 +42,5 @@ oc create -f ImageStream-Elasticsearch.yaml
 oc create -f BuildConfig-Elasticsearch.yaml
 oc create -f ImageStream-Letsencrypt-Injector.yaml
 oc create -f BuildConfig-Letsencrypt-Injector.yaml
+oc create -f ImageStream-DNS-Injector.yaml
+oc create -f BuildConfig-DNS-Injector.yaml

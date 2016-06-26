@@ -23,7 +23,4 @@ spec:
     - github:
         secret: de67e172-6452-452c-a5c2-5579e177a241
       type: GitHub
-    - generic:
-        secret: de67e172-6452-452c-a5c2-5579e177a241
-      type: Generic
     - type: ConfigChange
