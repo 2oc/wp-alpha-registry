@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  labels:
+    app: dns-injector
+  name: dns-injector
+  namespace: weepee-registry
+spec: {}

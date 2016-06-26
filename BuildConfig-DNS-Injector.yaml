@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: dns-injector
+  name: dns-injector
+  namespace: weepee-registry
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: dns-injector:latest
+  resources: {}
+  source:
+    git:
+      uri: git@github.com:weepee-org/wp-dns-injector.git
+      ref: release
+    type: Git
+    sourceSecret:
+      name: weepee-registry
+  strategy:
+    dockerStrategy: {}
+    type: Docker
+  triggers:
+    - github:
+        secret: 37b32fb7-1efa-4cc4-881f-28581bd5b5c9
+      type: GitHub
+    - type: ConfigChange
