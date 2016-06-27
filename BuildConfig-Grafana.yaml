@@ -13,8 +13,8 @@ spec:
   resources: {}
   source:
     git:
-      uri: https://github.com/weepee-org/grafana-docker.git
-      ref: openshift
+      uri: 'https://github.com/weepee-org/wp-oc-grafana.git'
+      ref: master
     type: Git
   strategy:
     dockerStrategy: {}
