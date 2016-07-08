@@ -22,8 +22,8 @@ oc create -f ImageStream-Mojo-Webserver.yaml
 oc create -f BuildConfig-Mojo-Webserver.yaml
 # oc create -f ImageStream-HHVM-Webserver.yaml
 # oc create -f BuildConfig-HHVM-Webserver.yaml
-# oc create -f ImageStream-Proxy-Server.yaml
-# oc create -f BuildConfig-Proxy-Server.yaml
+oc create -f ImageStream-Proxy-Server.yaml
+oc create -f BuildConfig-Proxy-Server.yaml
 oc create -f ImageStream-WordPress-PHP-WebApp.yaml
 oc create -f BuildConfig-WordPress-PHP-WebApp.yaml
 # oc create -f ImageStream-WordPress-HHVM-WebApp.yaml
