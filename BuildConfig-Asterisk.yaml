@@ -21,7 +21,8 @@ spec:
       name: weepee-registry
   strategy:
     type: Docker
-    dockerStrategy: {  }
+    dockerStrategy:
+      forcePull: true
   triggers:
     - github:
         secret: RQCkhwrMwly0uyTEt9GajfTIReM5LwGkq
