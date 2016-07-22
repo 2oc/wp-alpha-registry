@@ -13,11 +13,16 @@ spec:
   resources: {}
   source:
     git:
-      uri: https://github.com/weepee-org/openshift-asterisk.git
-      ref: release
+      uri: git@github.com:weepee-org/wp-alpha-registry.git
+      ref: master
     type: Git
+    sourceSecret:
+      name: weepee-registry
   strategy:
-    dockerStrategy: {}
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: quay.io/ure0/openshift-asterisk:latest
     type: Docker
   triggers:
     - github:
