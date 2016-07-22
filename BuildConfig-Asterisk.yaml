@@ -15,15 +15,13 @@ spec:
     git:
       uri: git@github.com:weepee-org/wp-alpha-registry.git
       ref: master
+    contextDir: asterisk/
     type: Git
     sourceSecret:
       name: weepee-registry
   strategy:
-    dockerStrategy:
-      from:
-        kind: ImageStreamTag
-        name: quay.io/ure0/openshift-asterisk:latest
     type: Docker
+    dockerStrategy: {  }
   triggers:
     - github:
         secret: RQCkhwrMwly0uyTEt9GajfTIReM5LwGkq
