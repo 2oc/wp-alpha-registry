@@ -11,7 +11,11 @@ oc policy add-role-to-group \
     system:image-puller system:serviceaccounts \
     --namespace=weepee-registry
 
-# Install
+# Install from quay
+oc create -f asterisk/is.yaml
+oc create -f asterisk/bc.yaml
+
+# Legacy needs to move to quay
 oc create -f ImageStream-Static-Webserver.yaml
 oc create -f BuildConfig-Static-Webserver.yaml
 oc create -f ImageStream-PHP-Webserver.yaml
@@ -34,8 +38,6 @@ oc create -f BuildConfig-WordPress-PHP-WebApp.yaml
 # oc create -f BuildConfig-memSQL-server.yaml
 oc create -f ImageStream-phpPgAdmin-WebApp.yaml
 oc create -f BuildConfig-phpPgAdmin-WebApp.yaml
-oc create -f ImageStream-Asterisk.yaml
-oc create -f BuildConfig-Asterisk.yaml
 oc create -f ImageStream-Redis.yaml
 oc create -f BuildConfig-Redis.yaml
 oc create -f ImageStream-Elasticsearch.yaml
