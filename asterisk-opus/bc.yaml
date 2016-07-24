@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: asterisk-opus
+  name: asterisk-opus
+  namespace: weepee-registry
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: asterisk-opus:latest
+  resources: {}
+  source:
+    git:
+      uri: git@github.com:weepee-org/wp-alpha-registry.git
+      ref: master
+    contextDir: asterisk-opus/
+    type: Git
+    sourceSecret:
+      name: weepee-registry
+  strategy:
+    type: Docker
+    dockerStrategy:
+      forcePull: true

@@ -11,9 +11,13 @@ oc policy add-role-to-group \
     system:image-puller system:serviceaccounts \
     --namespace=weepee-registry
 
-# Install from quay
+# (base asterisk)
 oc create -f asterisk/is.yaml
 oc create -f asterisk/bc.yaml
+
+# (patched asterisk with opus and vp8 support)
+oc create -f asterisk-opus/is.yaml
+oc create -f asterisk-opus/bc.yaml
 
 # Legacy needs to move to quay
 oc create -f ImageStream-Static-Webserver.yaml
