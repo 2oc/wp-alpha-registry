@@ -19,9 +19,9 @@ oc create -f asterisk/bc.yaml
 oc create -f asterisk-opus/is.yaml
 oc create -f asterisk-opus/bc.yaml
 
-# (s3backup for openshift)
-oc create -f wp-s3backup/is.yaml
-oc create -f wp-s3backup/bc.yaml
+# (s3-backup for openshift)
+oc create -f s3-backup/is.yaml
+oc create -f s3-backup/bc.yaml
 
 # Legacy needs to move to quay
 oc create -f ImageStream-Static-Webserver.yaml
