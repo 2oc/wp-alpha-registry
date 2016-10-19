@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  labels:
+    app: db-backup
+  name: db-backup
+  namespace: weepee-registry
+spec: {}

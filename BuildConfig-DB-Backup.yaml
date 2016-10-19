@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: db-backup
+  name: db-backup
+  namespace: weepee-registry
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: db-backup:latest
+  resources: {}
+  source:
+    git:
+      uri: git@github.com:weepee-org/openshift-dbbackup.git
+      ref: release
+    type: Git
+    sourceSecret:
+      name: weepee-registry
+  strategy:
+    dockerStrategy: {}
+    type: Docker
+  triggers:
+    - github:
+        secret: b29aa83c-133a-45e1-85ba-fb3c65dfec5e
+      type: GitHub
+    - type: ConfigChange
