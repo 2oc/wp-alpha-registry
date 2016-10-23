@@ -11,6 +11,9 @@ oc policy add-role-to-group \
     system:image-puller system:serviceaccounts \
     --namespace=weepee-registry
 
+oc secrets new-sshauth weepee-registry --ssh-privatekey=keys/weepee-registry -n weepee-registry
+oc secrets add serviceaccount/builder secrets/weepee-registry -n weepee-registry
+
 # (base asterisk)
 oc create -f asterisk/is.yaml
 oc create -f asterisk/bc.yaml
@@ -23,7 +26,6 @@ oc create -f asterisk-opus/bc.yaml
 oc create -f s3-backup/is.yaml
 oc create -f s3-backup/bc.yaml
 
-# Legacy needs to move to quay
 oc create -f ImageStream-Static-Webserver.yaml
 oc create -f BuildConfig-Static-Webserver.yaml
 oc create -f ImageStream-PHP-Webserver.yaml
